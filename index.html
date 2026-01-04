@@ -122,11 +122,11 @@
             width: 140px;
             height: 140px;
             margin: 0 auto 2rem auto;
-            background: rgba(255, 255, 255, 0.15); /* Fond très léger pour la transparence */
-            backdrop-filter: blur(5px); /* Effet verre */
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 0 50% 50% 50%; /* Forme demi-cercle */
-            transform: rotate(45deg); /* Rotation pour faire la goutte */
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -136,9 +136,9 @@
         }
 
         .hero-logo-container img {
-            width: 140%; /* Agrandir pour remplir la forme */
+            width: 140%;
             max-width: none;
-            transform: rotate(-45deg); /* Rotation inverse pour que le logo reste droit */
+            transform: rotate(-45deg);
             object-fit: contain;
         }
 
@@ -147,11 +147,8 @@
             margin-bottom: 1.5rem;
             font-weight: 900;
             line-height: 1.1;
-            
-            /* RESTAURATION DU BLANC INITIAL */
             color: var(--white);
             text-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            
             animation: fadeInUp 1s ease 0.2s backwards;
         }
 
@@ -258,6 +255,7 @@
             transform: scaleX(1);
         }
 
+        /* Icones Standard (Emoji) */
         .icon-box {
             font-size: 3rem;
             margin-bottom: 1.5rem;
@@ -265,6 +263,15 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+        }
+
+        /* Icônes SVG */
+        .icon-svg {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1.5rem;
+            display: inline-block;
             filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
         }
 
@@ -485,19 +492,25 @@
                 <p>Des solutions complètes pour l'installation et le dépannage.</p>
             </div>
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Service 1 : Plomberie (Emoji standard bleu) -->
                 <div class="card">
                     <div class="icon-box">💧</div>
                     <h3>Plomberie & Sanitaire</h3>
                     <p>Installation, réparation et dépannage de plomberie. Remplacement de sanitaires et robinetterie moderne.</p>
                 </div>
-                <!-- Service 2 -->
+                <!-- Service 2 : Chauffage (SVG Flamme Orange) -->
                 <div class="card">
-                    <div class="icon-box">🔥</div>
+                    <div class="icon-svg">
+                        <!-- Flamme SVG Orange -->
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 23C16.971 23 21 18.971 21 14C21 8.5 15.5 3.5 12 1C8.5 3.5 3 8.5 3 14C3 18.971 7.029 23 12 23Z" fill="#FF5722"/>
+                            <path d="M12 20C14.7614 20 17 17.7614 17 15C17 13 15 11 13 9C11 11 9 13 9 15C9 17.7614 11.2386 20 12 20Z" fill="#FF9800"/>
+                        </svg>
+                    </div>
                     <h3>Chauffage</h3>
                     <p>Maintenance de chaudières (gaz, fioul), radiateurs et systèmes de chauffage central. Entretien annuel.</p>
                 </div>
-                <!-- Service 3 -->
+                <!-- Service 3 : Climatisation (Emoji standard) -->
                 <div class="card">
                     <div class="icon-box">❄️</div>
                     <h3>Climatisation & PAC</h3>
