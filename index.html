@@ -311,10 +311,10 @@
         }
 
         .trust-icon {
-            width: 70px;
-            height: 70px;
-            background: #eef7ff;
-            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            background: #fff; /* Fond blanc pour les logos */
+            border-radius: 50%; /* Arrondi harmonieux */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -322,7 +322,15 @@
             color: var(--primary);
             font-weight: bold;
             font-size: 1.2rem;
-            box-shadow: inset 0 0 20px rgba(0, 97, 255, 0.05);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+            padding: 5px; /* Espace pour que le logo ne soit pas coupé */
+            border: 1px solid #f0f0f0;
+        }
+
+        .trust-logo-img {
+            width: 90%;
+            height: auto;
+            object-fit: contain;
         }
 
         /* CTA */
@@ -468,6 +476,7 @@
             <div class="badges-hero" style="margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                 <span class="badge" style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; backdrop-filter: blur(5px);">Certifié RGE</span>
                 <span class="badge" style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; backdrop-filter: blur(5px);">Qualibat / Quali Pac</span>
+                <span class="badge" style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; backdrop-filter: blur(5px);">Professionnel du Gaz (PG)</span>
             </div>
             
             <h1>Sanitaire Chauffage<br>Climatisation Azur</h1>
@@ -528,21 +537,37 @@
                 <p>L'expertise technique au service de votre habitat.</p>
             </div>
             <div class="trust-grid">
+                <!-- 1. Bureau Veritas -->
                 <div class="trust-item">
-                    <div class="trust-icon">RGE</div>
-                    <h3>Certifié RGE</h3>
-                    <p>Reconnu Garant de l'Environnement pour vos travaux d'économies d'énergie et aides de l'État.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">QP</div>
-                    <h3>Quali Pac</h3>
-                    <p>Qualification professionnelle pour l'installation de pompes à chaleur et systèmes de ventilation.</p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">🛡️</div>
+                    <div class="trust-icon">
+                        <img src="https://z-cdn-media.chatglm.cn/files/87c83196-0d03-4da2-9eab-ce0288063961.png?auth_key=1867532219-18dbcf641620430abf2938f158377c9d-0-e99c2d594a6a4e4328b209e7e7634b72" alt="Bureau Veritas" class="trust-logo-img">
+                    </div>
                     <h3>Bureau Veritas</h3>
                     <p>Bureau de contrôle agréé. Conformité et qualité des installations contrôlées par un organisme indépendant.</p>
                 </div>
+                <!-- 2. RGE -->
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <img src="https://z-cdn-media.chatglm.cn/files/0cd2c9fe-f222-4e73-8370-3d174ec32274.png?auth_key=1867532219-d6c4169053a54a0ba2bb7ffc84574930-0-deb6d46604b6c2a70af77fc741592b39" alt="RGE" class="trust-logo-img">
+                    </div>
+                    <h3>Certifié RGE</h3>
+                    <p>Reconnu Garant de l'Environnement pour vos travaux d'économies d'énergie et aides de l'État.</p>
+                </div>
+                <!-- 3. QualiPac -->
+                <div class="trust-item">
+                    <div class="trust-icon" style="font-size: 1.1rem;">QP</div>
+                    <h3>Quali Pac</h3>
+                    <p>Qualification professionnelle pour l'installation de pompes à chaleur et systèmes de ventilation.</p>
+                </div>
+                <!-- 4. Professionnel du Gaz (PG) -->
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <img src="https://z-cdn-media.chatglm.cn/files/63fa3a1c-88b5-4331-89ea-b0dae18e9e06.png?auth_key=1867532219-bb82e196a54441e0ab97c9f85584f670-0-142224e84309b0d766cf016483af4acd" alt="Professionnel du Gaz" class="trust-logo-img">
+                    </div>
+                    <h3>Professionnel du Gaz</h3>
+                    <p>Expertise certifiée pour l'installation, la maintenance et le contrôle d'installations gaz.</p>
+                </div>
+                <!-- 5. Artisans Qualifiés -->
                 <div class="trust-item">
                     <div class="trust-icon">👷</div>
                     <h3>Artisans Qualifiés</h3>
