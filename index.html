@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.C.C AZUR - Sanitaire Chauffage Climatisation Nice</title>
+    <!-- Police Moderne Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* RESET & BASE STYLES */
+        :root {
+            --primary: #0061ff; /* Bleu électrique */
+            --secondary: #60efff; /* Cyan Turquoise (Lagon) */
+            --text-dark: #2c3e50;
+            --text-light: #5f6c7b;
+            --white: #ffffff;
+            --light-bg: #f0f8ff; /* Bleu très clair azuré */
+            --shadow: 0 10px 30px rgba(0, 97, 255, 0.15);
+            --radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            font-weight: 500;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after { width: 100%; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 97, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(96, 239, 255, 0.4);
+        }
+
+        /* HERO SECTION AVEC VAGUE */
+        .hero {
+            background: linear-gradient(160deg, #00b4db 0%, #0083b0 100%);
+            color: var(--white);
+            padding: 4rem 0 10rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* STYLE GOUTTE D'EAU POUR LE LOGO */
+        .hero-logo-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem auto;
+            background: rgba(255, 255, 255, 0.15); /* Fond très léger pour la transparence */
+            backdrop-filter: blur(5px); /* Effet verre */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0 50% 50% 50%; /* Forme demi-cercle */
+            transform: rotate(45deg); /* Rotation pour faire la goutte */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-logo-container img {
+            width: 140%; /* Agrandir pour remplir la forme */
+            max-width: none;
+            transform: rotate(-45deg); /* Rotation inverse pour que le logo reste droit */
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            
+            /* RESTAURATION DU BLANC INITIAL */
+            color: var(--white);
+            text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 800px; 
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            color: var(--white);
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-white:hover {
+            transform: scale(1.05);
+        }
+
+        /* SVG WAVE */
+        .wave-separator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-separator svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        .wave-separator .shape-fill {
+            fill: var(--white);
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 6rem 0;
+            background-color: var(--white);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 97, 255, 0.2);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .icon-box {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* TRUST */
+        .trust {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, var(--white), #eef2f3);
+        }
+
+        .trust-grid {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .trust-item {
+            flex: 1 1 250px; 
+            max-width: 280px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .trust-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .trust-icon {
+            width: 70px;
+            height: 70px;
+            background: #eef7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: inset 0 0 20px rgba(0, 97, 255, 0.05);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: var(--white);
+            padding: 6rem 0 5rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .wave-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave-top svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+
+        .wave-top .shape-fill {
+            fill: #eef2f3;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 4rem 0 2rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            nav ul {
+                gap: 1.5rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero-logo-container {
+                width: 100px;
+                height: 100px;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info p {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <img src="https://z-cdn-media.chatglm.cn/files/075c9dcf-4358-47ce-9f09-f3036b2786f9.jpg?auth_key=1867482672-18a5148f41444136a3353d40e4a5faec-0-b7b58cee29e3d6a929ba7e855d4b7a20" alt="S.C.C AZUR Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-primary">Devis Gratuit</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <!-- LOGO EN FORME DE GOUTTE D'EAU -->
+            <div class="hero-logo-container">
+                <img src="https://z-cdn-media.chatglm.cn/files/075c9dcf-4358-47ce-9f09-f3036b2786f9.jpg?auth_key=1867482672-18a5148f41444136a3353d40e4a5faec-0-b7b58cee29e3d6a929ba7e855d4b7a20" alt="S.C.C AZUR Logo">
+            </div>
+
+            <div class="badges-hero" style="margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <span class="badge" style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; backdrop-filter: blur(5px);">Certifié RGE</span>
+                <span class="badge" style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; backdrop-filter: blur(5px);">Qualibat / Quali Pac</span>
+            </div>
+            
+            <h1>Sanitaire Chauffage<br>Climatisation Azur</h1>
+            
+            <p>Artisans qualifiés à Nice. <strong>Nous intervenons sur l'ensemble de la région Provence-Alpes-Côte d'Azur.</strong></p>
+            <a href="#contact" class="btn-white">Demander une intervention</a>
+        </div>
+        
+        <!-- Vague du bas -->
+        <div class="wave-separator">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title" style="text-align: center;">
+                <h2>Nos Domaines d'Expertise</h2>
+                <p>Des solutions complètes pour l'installation et le dépannage.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="card">
+                    <div class="icon-box">💧</div>
+                    <h3>Plomberie & Sanitaire</h3>
+                    <p>Installation, réparation et dépannage de plomberie. Remplacement de sanitaires et robinetterie moderne.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="card">
+                    <div class="icon-box">🔥</div>
+                    <h3>Chauffage</h3>
+                    <p>Maintenance de chaudières (gaz, fioul), radiateurs et systèmes de chauffage central. Entretien annuel.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="card">
+                    <div class="icon-box">❄️</div>
+                    <h3>Climatisation & PAC</h3>
+                    <p>Installation de climatisation réversible et pompes à chaleur air/eau pour une économie d'énergie optimale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="container trust-content">
+            <div class="section-title" style="text-align: center;">
+                <h2>Pourquoi nous choisir ?</h2>
+                <p>L'expertise technique au service de votre habitat.</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">RGE</div>
+                    <h3>Certifié RGE</h3>
+                    <p>Reconnu Garant de l'Environnement pour vos travaux d'économies d'énergie et aides de l'État.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">QP</div>
+                    <h3>Quali Pac</h3>
+                    <p>Qualification professionnelle pour l'installation de pompes à chaleur et systèmes de ventilation.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🛡️</div>
+                    <h3>Bureau Veritas</h3>
+                    <p>Bureau de contrôle agréé. Conformité et qualité des installations contrôlées par un organisme indépendant.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">👷</div>
+                    <h3>Artisans Qualifiés</h3>
+                    <p>Une équipe de professionnels expérimentés, soucieux du détail et de la propreté sur chantier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="wave-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="container">
+            <h2>Une urgence ou un projet ?</h2>
+            <p style="margin-bottom: 2.5rem; opacity: 0.9; font-size: 1.1rem;">Contactez S.C.C AZUR pour un devis gratuit ou une intervention rapide.</p>
+            <a href="tel:0752484464" class="btn-primary" style="font-size: 1.2rem; padding: 1rem 3rem;">📞 07 52 48 44 64</a>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem;">Ou par email : <a href="mailto:contact@sccazur.fr" style="color: var(--secondary); font-weight: bold;">contact@sccazur.fr</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col contact-info" style="flex: 2; min-width: 280px;">
+                    <h4>S.C.C AZUR</h4>
+                    <p>📍 195 Boulevard de la Madeleine, 06000 Nice</p>
+                    <p>📞 07 52 48 44 64</p>
+                    <p>📧 <a href="mailto:contact@sccazur.fr" style="color:white;">contact@sccazur.fr</a></p>
+                    <p style="margin-top: 1rem; color: var(--secondary);">Dépannage 7j/7 en urgence.</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.7;">SIRET : 903 483 410 000 10</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Plomberie</a></li>
+                        <li><a href="#">Chauffage</a></li>
+                        <li><a href="#">Climatisation</a></li>
+                        <li><a href="#">Pompe à chaleur</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 S.C.C AZUR. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
