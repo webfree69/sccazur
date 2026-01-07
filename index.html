@@ -71,7 +71,7 @@
             --text-dark: #2c3e50;
             --text-light: #5f6c7b;
             --white: #ffffff;
-            --light-bg: #f0f8ff; /* Bleu très clair azuré */
+            --light-bg: #f0f8ff;
             --shadow: 0 10px 30px rgba(0, 97, 255, 0.15);
             --radius: 16px;
         }
@@ -95,7 +95,7 @@
 
         /* HEADER */
         header {
-            background: rgba(255,255,255, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             position: sticky;
@@ -116,11 +116,12 @@
             align-items: center;
         }
 
-        /* LOGO HEADER SIMPLE */
+        /* LOGO HEADER STYLE ÉPURÉ */
         .logo img {
             height: 60px;
             width: auto;
             object-fit: contain;
+            border-radius: 8px; /* Légèrement arrondi pour la douceur */
         }
 
         nav ul {
@@ -175,14 +176,21 @@
             overflow: hidden;
         }
 
-        /* LOGO HERO SIMPLE ET DYNAMIQUE */
+        /* LOGO HERO STYLE "FORME ÉPURÉE" (Glassmorphism) */
         .hero-logo {
-            max-width: 400px; 
+            max-width: 380px;
             height: auto;
             margin: 0 auto 2rem auto;
             display: block;
             animation: fadeInDown 1s ease;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+            
+            /* Style Forme Épurée */
+            background: rgba(255, 255, 255, 0.25); /* Fond verre semi-transparent */
+            backdrop-filter: blur(10px); /* Flou d'arrière-plan */
+            border-radius: 25px; /* Arrondi moderne (Pill shape) */
+            padding: 15px 40px; /* Espace pour aérer le logo */
+            border: 1px solid rgba(255, 255, 255, 0.4); /* Bordure subtile pour la netteté */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Ombre pour le relief */
         }
 
         /* STYLE BRAND NAME */
@@ -190,7 +198,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 4px; 
             color: var(--white);
             margin-bottom: 0.5rem;
             opacity: 0.9;
@@ -489,9 +497,7 @@
             }
             .hero-logo {
                 max-width: 250px;
-            }
-            .hero-brand {
-                font-size: 1.4rem;
+                padding: 10px 20px; /* Adapter le padding pour mobile */
             }
             .footer-content {
                 flex-direction: column;
@@ -509,7 +515,7 @@
     <header>
         <div class="container nav-wrapper">
             <div class="logo">
-                <!-- LOGO DU MENU -->
+                <!-- LOGO HEADER SIMPLE -->
                 <img src="https://filedn.eu/lK5hYl5s2IwBMBWXryswvmj/SCCAZUR.png" alt="Plombier Nice SCC AZUR Logo">
             </div>
             <nav>
@@ -526,7 +532,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <!-- LOGO SIMPLE BANNIÈRE -->
+            <!-- LOGO HERO FORME ÉPURÉE (Arrondi + Verre) -->
             <img src="https://filedn.eu/lK5hYl5s2IwBMBWXryswvmj/SCCAZUR.png" class="hero-logo" alt="Plombier à Nice - Logo SCC AZUR">
 
             <div class="badges-hero" style="margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
@@ -535,7 +541,6 @@
                 <span class="badge" style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; backdrop-filter: blur(5px);">Professionnel du Gaz (PG)</span>
             </div>
             
-            <!-- NOM DE LA MARQUE AU DESSUS -->
             <div class="hero-brand">S.C.C AZUR</div>
 
             <h1>Votre Plombier à Nice<br>Chauffage & Climatisation</h1>
